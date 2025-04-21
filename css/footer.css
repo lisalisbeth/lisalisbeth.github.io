@@ -1,0 +1,136 @@
+footer {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+  
+  footer p {
+    color: var(--color-bg);
+  }
+  
+  footer.light p {
+    color: var(--color-accent);
+  }
+  
+  footer .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-row:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-row:nth-child(2) p,
+  .footer-row:nth-child(2) a {
+    font-size: var(--font-tiny);
+    color: var(--color-bg);
+  }
+
+  .legal-row {
+    display: flex;
+    align-items: start;
+    gap: 16px;
+  }
+  
+  .footer-row:nth-child(1) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8em;
+  }
+  
+  .footer-col:nth-child(1) p {
+    font-size: var(--font-tiny);
+  }
+  
+  .footer-col:nth-child(2) a,
+  .footer-col:nth-child(3) a {
+    color: var(--color-bg);
+    font-size: var(--font-small);
+    position: relative;
+    display: inline-block;
+    padding: 0.1em 0;
+  }
+  
+  .footer-col:nth-child(2) a::after,
+  .footer-col:nth-child(3) a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 2px;
+    background: #c03f13;
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+
+  .footer-col:nth-child(2) a:hover::after,
+  .footer-col:nth-child(3) a:hover::after {
+    width: 100%;
+  }
+  
+  .footer-col .magnetic-area {
+    margin-top: -20px;
+    margin-left: -20px;
+    padding: 20px;
+    background-color: none;
+  }
+  
+  .footer-col .btn {
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-accent);
+    border: 0.75px dashed var(--color-bg);
+  }
+  
+  .footer-col .btn p {
+    font-size: var(--font-tiny);
+    color: var(--color-bg);
+  }
+  
+  footer.light {
+    background: none;
+    padding: 4em 0;
+  }
+  
+  footer.light {
+    color: var(--color-accent);
+  }
+  
+  footer.light .footer-col:nth-child(2) a {
+    color: var(--color-accent);
+    border: 0.75px dashed var(--color-accent);
+  }
+  
+  footer.light .footer-col:nth-child(3) a,
+  footer.light .footer-col:nth-child(4) a {
+    color: var(--color-accent);
+  }
+  
+  footer.light .footer-col .btn {
+    background: none;
+    border: 0.75px dashed var(--color-accent);
+  }
+  
+  footer.light .footer-col .btn p {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 992px) {
+  
+    .footer-row:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      gap: 4em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-row:nth-child(2) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }

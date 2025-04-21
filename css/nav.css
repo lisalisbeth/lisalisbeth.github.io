@@ -1,0 +1,136 @@
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 2em;
+  color: var(--color-accent);
+  mix-blend-mode: difference;
+  z-index: 12;
+}
+
+nav > div {
+  flex: 1;
+}
+
+
+.toggle-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75em 0 1.5em 0;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 0.25em;
+  outline: none;
+  height: 20px;
+  width: 28px;
+  border: none;
+  transition: all 250ms ease-out;
+  cursor: pointer;
+}
+
+.burger:before,
+.burger:after {
+  content: "";
+  width: 32px;
+  height: 1.5px;
+  position: absolute;
+  background: var(--color-accent);
+  transition: all 250ms ease-out;
+  will-change: transform;
+}
+
+.burger:before {
+  transform: translateY(-3px);
+}
+
+.burger:after {
+  transform: translateY(3px);
+}
+
+.active.burger:before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.active.burger:after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: var(--color-bg);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  will-change: transform;
+  z-index: 10
+}
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-accent);
+}
+
+.menu-item {
+  display: flex;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.menu-item p a{
+  position: relative;
+  text-align: center;
+  font-family: "Anybody";
+  text-transform: uppercase;
+  font-size: 96px;
+  line-height: 80%;
+  will-change: transform;
+  transition: letter-spacing 0.3s;
+}
+
+.menu-item p a:hover {
+  letter-spacing: 0.075em;
+}
+
+.menu-item p#active a::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #c03f13;
+  width: 0%;
+  height: 8px;
+}
+
+.menu-item a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+
+
+@media (max-width: 992px) {
+  .menu-item p a{
+    font-size: 40px;
+    line-height: 120%;
+  }
+}

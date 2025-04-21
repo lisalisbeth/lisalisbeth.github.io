@@ -1,0 +1,33 @@
+.legal-container h2,
+.legal-container h2 span,
+.legal-container h3,
+.legal-container h4,
+.legal-container h5,
+.legal-container h6{
+    font-size: var(--font-small); 
+    font-weight: bolder;
+    color: var(--color-accent);
+    padding: 0.75em 0 0.25em 0;
+    text-align: left !important;
+}
+
+.legal-container ul li {
+    color: var(--color-accent);
+    font-size: var(--font-small); 
+    font-family: "SourceCodePro";
+}
+
+.privacy-info-row {
+    flex-direction: column;
+}
+
+.privacy-info-row p {
+    width: 100% !important;
+    padding: 0;
+}
+
+@media (max-width: 992px) {
+    .privacy-info-row {
+        gap: 0 !important;
+    }
+}
