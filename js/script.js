@@ -36,24 +36,6 @@ function moveMagnet(event) {
   });
 }
 
-gsap.set(".card-1", { rotation: -10 });
-gsap.set(".card-2", { rotation: -20 });
-gsap.set(".card-3", { rotation: -15 });
-
-gsap.registerPlugin(ScrollTrigger);
-
-const cards = document.querySelectorAll(".card");
-
-ScrollTrigger.create({
-  trigger: ".contact",
-  start: "-50% top",
-  onUpdate: (self) => {
-    const progress = self.progress;
-    cards.forEach((card, index) => {
-      gsap.to(card, { y: -300 * progress, overwrite: true });
-    });
-  },
-});
 
 function splitTextIntoSpans(selector) {
   const elements = document.querySelectorAll(selector);
