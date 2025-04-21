@@ -43,39 +43,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Buchstaben einzeln wrappen
   function splitTextIntoSpans(selector) {
     const elements = document.querySelectorAll(selector);
-
+  
     elements.forEach((element) => {
       const text = element.innerText;
       element.innerHTML = "";
-
+  
       text.split("").forEach((char) => {
         if (char === " ") {
           element.innerHTML += "&nbsp;";
         } else {
           const span = document.createElement("span");
           span.innerText = char;
-
+  
           const div = document.createElement("div");
           div.className = "letter";
           div.appendChild(span);
-
+  
           element.appendChild(div);
         }
       });
     });
   }
-
+  
   splitTextIntoSpans("h2");
-
-  // Scroll Animation
-  gsap.registerPlugin(ScrollTrigger);
-
+  
   document.querySelectorAll("h2").forEach((h2) => {
     const spans = h2.querySelectorAll(".letter span");
-
+  
     gsap.to(spans, {
       x: 0,
       duration: 1,
@@ -85,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: h2,
         start: "top 90%",
         end: "bottom 20%",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
   });
 
