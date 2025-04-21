@@ -180,3 +180,9 @@ img {
     left: 50%;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2em 1em;
+  }
+}

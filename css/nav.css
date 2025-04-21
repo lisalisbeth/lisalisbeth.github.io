@@ -134,3 +134,9 @@ nav > div {
     line-height: 120%;
   }
 }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1.5em 1em;
+  }
+}
