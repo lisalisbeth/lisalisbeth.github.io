@@ -214,7 +214,7 @@
 
 @media (max-width: 768px) {
   .about-hero-header {
-    min-height: 100vh;
+    min-height: 120vh;
   }
 
   .about-info-copy-col:nth-child(2) {
