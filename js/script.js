@@ -37,47 +37,35 @@ function moveMagnet(event) {
 }
 
 
-function splitTextIntoSpans(selector) {
-  const elements = document.querySelectorAll(selector);
+function animateH2OnScroll() {
+  const h2Elements = document.querySelectorAll("h2");
 
-  elements.forEach((element) => {
-    const text = element.innerText;
-    element.innerHTML = "";
-
-    text.split("").forEach((char) => {
-      if (char === " ") {
-        element.innerHTML += "&nbsp;";
-      } else {
-        const span = document.createElement("span");
-        span.innerText = char;
-
-        const div = document.createElement("div");
-        div.className = "letter";
-        div.appendChild(span);
-
-        element.appendChild(div);
+  h2Elements.forEach((h2) => {
+    gsap.fromTo(
+      h2,
+      {
+        x: "100%", // Starte außerhalb des rechten Bildschirmrands
+        opacity: 0,
+      },
+      {
+        x: "0%", // Ende an der ursprünglichen Position
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: h2,
+          start: "top 90%", // Animation startet, wenn der obere Rand des Elements 90% des Viewports erreicht
+          end: "bottom 20%", // Animation endet, wenn der untere Rand des Elements 20% des Viewports erreicht
+          toggleActions: "play none none reverse", // Aktionen beim Erreichen und Verlassen des Triggerbereichs
+          markers: false, // Zum Debuggen kannst du hier "true" setzen, um die Triggerpunkte zu sehen
+        },
       }
-    });
+    );
   });
 }
 
-splitTextIntoSpans("h2");
-
-document.querySelectorAll("h2").forEach((h2) => {
-  const spans = h2.querySelectorAll(".letter span");
-
-  gsap.to(spans, {
-    x: 0,
-    duration: 1,
-    ease: "power4.out",
-    delay: (index) => Math.random() * 0.5 + 0.25,
-    scrollTrigger: {
-      trigger: h2,
-      start: "top 90%",
-      end: "bottom 20%",
-      toggleActions: "play none none reverse",
-    },
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  animateH2OnScroll();
 });
 
 
