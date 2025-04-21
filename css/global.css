@@ -2,7 +2,7 @@
   --color-accent: #cdc6be;
   --color-bg: #141412;
 
-  --font-large: clamp(40px, calc(128px - (1440px - 100vw) * 0.15), 128px);
+  --font-large: clamp(32px, calc(128px - (1440px - 100vw) * 0.15), 128px);
   --font-regular: 16px;
   --font-small: 14px;
   --font-tiny: 12px;
@@ -167,10 +167,6 @@ img {
 }
 
 @media (max-width: 992px) {
-
-  h2 span {
-    font-size: 40px;
-  }
 
   .card {
     width: 200px;

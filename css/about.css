@@ -216,4 +216,8 @@
   .about-hero-header {
     min-height: 100vh;
   }
+
+  .about-info-copy-col:nth-child(2) {
+    flex-direction: column;
+  }
 }
