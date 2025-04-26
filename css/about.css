@@ -220,4 +220,8 @@
   .about-info-copy-col:nth-child(2) {
     flex-direction: column;
   }
+
+  .about-feature-img {
+    height: 640px;
+  }
 }

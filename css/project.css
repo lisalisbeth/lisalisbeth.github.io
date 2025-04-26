@@ -275,3 +275,9 @@
     padding-left: 0em;
   }
 }
+
+@media (max-width: 768px) {
+  .project-img {
+    height: 480px;
+  }
+}
