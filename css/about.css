@@ -2,16 +2,10 @@
   position: relative;
   z-index: 1;
   min-height: 140vh;
-  background-color: var(--color-bg);
 }
 
 .about-hero-header h2 {
   font-size: 200px;
-}
-
-.about-hero-header h2,
-.about-hero-header h2 span {
-  mix-blend-mode: difference;
 }
 
 .about-hero-header h2:nth-child(2) {
